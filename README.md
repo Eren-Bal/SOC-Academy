@@ -41,6 +41,6 @@ Aşağıdaki tabloda, laboratuvar ortamında tamamlanan ve planlanan senaryolar 
 ## Hakkımda
 Ben Eren Bal. Siber güvenlik ve savunma odaklı bir Bilgisayar Mühendisliği öğrencisiyim. SOC Analizi, Mavi Takım operasyonları üzerine çalışmalarımı sürdürüyorum.
 
-LinkedIn: [linkedin.com/in/eren-bal-01a887375](https://www.linkedin.com/in/eren-bal/](https://www.linkedin.com/in/eren-bal-01a887375/)
+LinkedIn: [linkedin.com/in/eren-bal-01a887375](https://www.linkedin.com/in/eren-bal/](https://www.linkedin.com/in/eren-bal-01a887375)
 ---
 *Bu proje sürekli güncellenmekte ve yeni senaryolar eklenmektedir.*
