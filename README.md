@@ -16,20 +16,6 @@ Her senaryo, **MITRE ATT&CK** çerçevesine uygun bir saldırı vektörünü tem
 
 ---
 
-## Siber Saldırı Senaryoları (1/17)
-
-Aşağıdaki tabloda, laboratuvar ortamında tamamlanan ve planlanan senaryolar yer almaktadır:
-
-| ID | Senaryo Başlığı | Saldırı Vektörü | Durum |
-|:---|:---|:---|:---:|
-| 01 | [Windows Brute Force](./Scenario-01-Windows-Brute-Force) | RDP Kaba Kuvvet & Yetki Yükseltme | ✅ Tamamlandı |
-| 02 | Defense Evasion | Event ID 1102 (Log Temizleme) |
-| 03 | Persistence | Scheduled Tasks (Zamanlanmış Görevler) |
-| 04 | Privilege Escalation | UAC Bypass & Account Creation | 
-| ... | ... | ... | ... |
-
----
-
 ## Kullanılan Teknolojiler
 * **SIEM:** Splunk Enterprise
 * **Programlama:** Python (Custom Log Generation)
