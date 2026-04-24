@@ -1,13 +1,13 @@
 # SOC Academy - Senaryo 02: Fileless Malware (LotL) & Süreç Ağacı Analizi
 
-## 📝 Olay Özeti
+## Olay Özeti
 Bu laboratuvar çalışmasında, kurumsal ağdaki bir kullanıcıya gönderilen oltalama (phishing) e-postası üzerinden tetiklenen gelişmiş bir **"Dosyasız Zararlı Yazılım" (Fileless Malware)** vakası incelenmiştir. 
 
 Saldırganın sisteme standart bir `.exe` indirmek yerine işletim sisteminin yasal araçlarını (**Living off the Land - LotL**) silah olarak kullandığı bu senaryoda; EDR logları içerisindeki gürültülü veriler arasından süreç hiyerarşisi (Parent-Child Process) analizi **Splunk SIEM** üzerinde gerçekleştirilmiştir.
 
 ---
 
-## 🔍 Adım 1: Karantina Alarmı ve İlk Tespit
+## Adım 1: Karantina Alarmı ve İlk Tespit
 Sistemdeki binlerce olağan işletim sistemi süreci (Chrome, Explorer vb.) arasından, EDR sisteminin müdahale edip karantinaya aldığı zararlı aktiviteyi bulmak için filtreleme yapıldı.
 
 **Kullanılan SPL Sorgusu:**
@@ -20,7 +20,7 @@ source="advanced_edr_logs.json" action_taken="Quarantined"
 
 ---
 
-## 🌳 Adım 2: Kök Neden Analizi (Saldırı Zinciri)
+## Adım 2: Kök Neden Analizi (Saldırı Zinciri)
 PowerShell'in durduk yere neden çalıştığını ve saldırının kaynağını bulmak için kurban bilgisayardaki (**DESKTOP-ARTH**) ebeveyn-çocuk (Parent-Child) süreç ilişkisi incelendi.
 
 **Kullanılan SPL Sorgusu:**
@@ -34,14 +34,14 @@ source="advanced_edr_logs.json" device.hostname="DESKTOP-ARTH"
 
 ---
 
-## 🛠️ Adım 3: Tehdit Zenginleştirme (Command Line Analizi)
+## Adım 3: Tehdit Zenginleştirme (Command Line Analizi)
 Çalıştırılan komutun amacını anlamak için EDR loglarındaki `command_line` parametresi detaylıca incelendi.
 
 > **Bulgu:** Saldırganın antivirüsleri atlatmak ve analizi zorlaştırmak için komut satırını `-EncodedCommand JABzAD0ATg...` şeklinde **Base64** ile şifrelediği (Obfuscation) görüldü. Bir SOC operasyonunda bu kod CyberChef gibi araçlarla çözülerek asıl zararlı sunucu IP'si tespit edilebilir.
 
 ---
 
-## 🛡️ Adım 4: Olay Müdahalesi (Incident Response Playbook)
+## Adım 4: Olay Müdahalesi (Incident Response Playbook)
 Bir L1/L2 SOC Analisti perspektifiyle bu ihlale karşı alınması gereken acil aksiyonlar şunlardır:
 
 1. **Ağ İzolasyonu (Containment):** Zararlı kod EDR tarafından durdurulmuş olsa da, drop edilmiş başka bir dosya ihtimaline karşı ilgili makine EDR platformu üzerinden derhal ağdan izole edilmelidir.
